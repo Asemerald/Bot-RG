@@ -2,7 +2,6 @@ const { Client, Intents, Interaction, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const { MessageActionRow, MessageButton } = require('discord.js');
 const Discord = require('discord.js');
-const config = require('./config.json');
 
 
 client.on("ready", () => {
