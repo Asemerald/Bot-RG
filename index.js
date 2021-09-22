@@ -34,8 +34,9 @@ client.on("message", (message) => {
         .setLabel('Compris !')
         .setStyle('SUCCES'),
     );
-
-   message.reply({ content: [embed1], components: [row] });
+    setTimeout(function(){
+      message.reply({ content: [embed1], components: [row] });
+   }, 2000);
    
 }
 });
