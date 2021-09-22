@@ -10,14 +10,14 @@ client.on("ready", () => {
   client.user.setActivity('des films de mia khalifa', { type: 'STREAMING', url: 'https://discordapp.com/' });
 })
 
-
+let Commandes_report = ["!r","! R", "! r"];
 
 client.on("message", (message) => {
   if(message.content === "!gd") {
     const row = new MessageActionRow()
     .addComponents(
       new MessageButton()
-        .setCustomId('timer')
+        .setCustomId('gd')
         .setLabel('clique moi fort senpai')
         .setStyle('PRIMARY'),
     );
@@ -79,30 +79,30 @@ client.on("message", (message) => {
 });
 
 client.on("message", (message) => {
-  if(message.content === "!r") {
-    const row = new MessageActionRow()
-    .addComponents(
-      new MessageButton()
-        .setCustomId('10min')
-        .setLabel('10 min')
-        .setStyle('PRIMARY'),
-      new MessageButton() 
-        .setCustomId('30min')
-        .setLabel('30 min')
-        .setStyle('PRIMARY'),
-      new MessageButton() 
-        .setCustomId('1h')
-        .setLabel('1h')
-        .setStyle('PRIMARY'),
-      new MessageButton() 
-        .setCustomId('2h')
-        .setLabel('2h')
-        .setStyle('PRIMARY'),
-      new MessageButton()
-        .setCustomId('page2')
-        .setLabel('Voir plus de délais ')
-        .setStyle('SECONDARY'),
-    );
+    if(message.content === "!r" || message.content === "! R") {
+      const row = new MessageActionRow()
+        .addComponents(
+        new MessageButton()
+          .setCustomId('10min')
+          .setLabel('10 min')
+          .setStyle('PRIMARY'),
+        new MessageButton() 
+          .setCustomId('30min')
+          .setLabel('30 min')
+          .setStyle('PRIMARY'),
+        new MessageButton() 
+          .setCustomId('1h')
+          .setLabel('1h')
+          .setStyle('PRIMARY'),
+        new MessageButton() 
+          .setCustomId('2h')
+          .setLabel('2h')
+          .setStyle('PRIMARY'),
+        new MessageButton()
+          .setCustomId('page2')
+          .setLabel('Voir plus de délais ')
+          .setStyle('SECONDARY'),
+      );
     
     setTimeout(function(){
       message.reply({ content: 'Bien ouej, mets un timer maintenant', components: [row] });
@@ -112,12 +112,12 @@ client.on("message", (message) => {
 
 client.on("interactionCreate", async (interaction) => {
   if(interaction.isButton()) {
-    if (interaction.customId === "timer") {
+    if (interaction.customId === "gd") {
       if(interaction.guild.id === '742693291937497168') {
         
         interaction.reply("A dans 22h bg")
       setTimeout(function(){
-        interaction.channel.send("<@378513552270557185>, <@328585121928314881> et <@266231840237551616> aka les bgs, c'est l'heure");
+        interaction.channel.send("<@378513552270557185>, <@328585121928314881>, <@266231840237551616> et <@403176339521142785> aka les bgs, c'est l'heure");
      }, 79200000 );
      interaction.message.delete()
   }
@@ -190,6 +190,13 @@ client.on("interactionCreate", async (interaction) => {
   }, 32400000);
   interaction.message.delete()
   }
+  if (interaction.customId === "12h") {
+    interaction.reply("A dans 12h bg")
+    setTimeout(function(){
+      interaction.channel.send(`${interaction.user}, l'heure du !r`);
+  }, 43200000);
+  interaction.message.delete()
+  }
   if (interaction.customId === "back") {
     const row = new MessageActionRow()
     .addComponents(
@@ -232,6 +239,10 @@ client.on("interactionCreate", async (interaction) => {
       new MessageButton() 
         .setCustomId('9h')
         .setLabel('9h')
+        .setStyle('PRIMARY'),
+      new MessageButton() 
+        .setCustomId('12h')
+        .setLabel('12h')
         .setStyle('PRIMARY'),
       new MessageButton() 
         .setCustomId('back')
