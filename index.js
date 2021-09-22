@@ -23,7 +23,7 @@ client.on("message", (message) => {
     );
     setTimeout(function(){
       message.reply({ content: 'Bien ouej, mets un timer maintenant', components: [row] });
-    }, 1000);
+    }, 500);
 }
 });
 
@@ -118,13 +118,13 @@ client.on("interactionCreate", async (interaction) => {
         interaction.reply("A dans 22h bg")
       setTimeout(function(){
         interaction.channel.send("<@378513552270557185>, <@328585121928314881> et <@266231840237551616> aka les bgs, c'est l'heure");
-     }, 10000);
+     }, 79200000 );
      interaction.message.delete()
   }
   else { interaction.reply("A dans 22h bg")
     setTimeout(function(){
     interaction.channel.send(`${interaction.user}, l'heure du !gd`);
-    }, 10000);
+    }, 79200000 );
     interaction.message.delete()}
   }
   if (interaction.customId === "10min") {
