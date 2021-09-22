@@ -4,14 +4,10 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 
 
 client.on("ready", () => {
-  client.user.bot.user.setPresence({
-    game: {
-    name: `mia khalifa`,
-    type: "STREAMING",
-    url: "https://www.twitch.tv/discord"
-    }
-    });
-  })
+  client.user.setActivity('des films de mia khalifa', { type: 'STREAMING', url: 'https://discordapp.com/' });
+})
+
+
 
 client.on("message", (message) => {
   if(message.content === "!gd") {
