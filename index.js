@@ -3,7 +3,9 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 
-client.on("ready")
+client.on("ready", (ready) => {
+  client.user.setActivity('ici pour niquer des meres')
+})
 
 client.on("message", (message) => {
   if(message.content === "!gd") {
