@@ -2,6 +2,8 @@ const { Client, Intents, Interaction, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const { MessageActionRow, MessageButton } = require('discord.js');
 const Discord = require('discord.js');
+require('dotenv').config();
+const token = process.env.BOT_TOKEN
 
 
 client.on("ready", () => {
@@ -74,11 +76,19 @@ client.on("message", (message) => {
 client.on("interactionCreate", async (interaction) => {
   if(interaction.isButton()) {
     if (interaction.customId === "timer") {
-      interaction.reply("A dans 22h bg")
+      if(interaction.guild.id === '742693291937497168') {
+        
+        interaction.reply("A dans 22h bg")
       setTimeout(function(){
-        interaction.channel.send("<@378513552270557185>, <@328585121928314881> et <@266231840237551616> aka les bg, c'est l'heure");
-     }, 79200000);
+        interaction.channel.send("<@378513552270557185>, <@328585121928314881> et <@266231840237551616> aka les bgs, c'est l'heure");
+     }, 10000);
      interaction.message.delete()
+  }
+  else { interaction.reply("A dans 22h bg")
+    setTimeout(function(){
+    interaction.channel.send(`${interaction.user}, l'heure du !gd`);
+    }, 10000);
+    interaction.message.delete()}
   }
   if (interaction.customId === "10min") {
     interaction.reply("A dans 10 minutes bg")
@@ -188,4 +198,4 @@ client.on("interactionCreate", async (interaction) => {
 })
 
 
-client.login(process.env.BOT_TOKEN);
+client.login(token);
