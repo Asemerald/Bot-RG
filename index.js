@@ -67,6 +67,10 @@ client.on("message", (message) => {
         .setCustomId('cancel')
         .setLabel('Compris !')
         .setStyle('SUCCESS'),
+      new MessageButton()
+        .setURL("https://github.com/Asemerald/Bot-RG")
+        .setLabel("Lien vers le Github du bot")
+        .setStyle("LINK")
     );
     setTimeout(function(){
       message.reply({ content: `Hello bg, voici comment je fonctionne : \n - A chaque !r, j'enverrai un message avec en dessous des boutons indiquant des durées. Il te suffit simplement de cliquer sur la durée qui te convient pour te faire ping au bout du temps que tu a choisis \n - Je réagis aussi au !gd ! Il te suffit de cliquer sur le boutton pour te faire mentionner 22h après. \n - Pour les !fp, c'est pareil que les !r \n - Il est possible que je restart a des moments de la journée, dans ce cas, les timers mit en place seront perdu (rassurez vous c'est rare, mais je préviens au cas ou), croyez moi c'est aussi relou pour vous que pour moi \n - Si jamais vous trouvez un bug, avez une question ou une idée de feature, vous pouvez toujours venir me mp : samohT#2768 (ya des chances que je sois sur le serveur, me ping marche aussi)`, components: [row] });
