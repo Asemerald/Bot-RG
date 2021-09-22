@@ -3,9 +3,15 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 
-client.on("ready", (ready) => {
-  client.user.setActivity('ici pour niquer des meres')
-})
+client.on("ready", () => {
+  client.user.bot.user.setPresence({
+    game: {
+    name: `mia khalifa`,
+    type: "STREAMING",
+    url: "https://www.twitch.tv/discord"
+    }
+    });
+  })
 
 client.on("message", (message) => {
   if(message.content === "!gd") {
