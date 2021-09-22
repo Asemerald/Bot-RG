@@ -29,4 +29,4 @@ client.on("interactionCreate", async (interaction) => {
 })
 
 
-client.login('ODkwMTI1Nzc2NjE4NDE4MTk4.YUrQOg.ypTq3pKoqEcqg1lq1WJr4tSBNOQ');
+client.login('ODkwMTI1Nzc2NjE4NDE4MTk4.YUrQOg.0cvdyCQVfUM7XDmVR0af_uLsjhk');
